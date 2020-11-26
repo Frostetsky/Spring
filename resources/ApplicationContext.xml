@@ -7,7 +7,19 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id = "MyPet"
+    <bean id = "myPet"
           class = "Spring_IoC.IoC.Cat">
+    </bean>
+
+    <!--
+    <bean id = "myPerson"
+          class="Spring_DI.DI.Person">
+        <constructor-arg ref = "myPet"/>
+    </bean>
+    -->
+
+    <bean id = "myPerson"
+          class="Spring_DI.DI.Person">
+        <property name = "pet" ref = "myPet"/>
     </bean>
 </beans>

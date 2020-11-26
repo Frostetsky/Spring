@@ -7,7 +7,7 @@ public class Main {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
-        Pet pet = context.getBean("MyPet", Pet.class);
+        Pet pet = context.getBean("myPet", Pet.class);
         pet.say();
         context.close();
     }

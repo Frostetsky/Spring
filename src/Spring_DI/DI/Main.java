@@ -1,21 +1,22 @@
 package Spring_DI.DI;
 
-import Spring_IoC.IoC.Pet;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("ApplicationContext.xml");
         //Pet pet = new Cat();
         //Person person = new Person(pet);
         //person.callYourPet();
 
         // Hard зависимость.
-        ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("ApplicationContext.xml");
-        Pet pet = context.getBean("MyPet", Pet.class);
-        Person person = new Person(pet);
-        person.callYourPet();
+        //Pet pet = context.getBean("myPet", Pet.class);
+        //Person person = new Person(pet);
+        //person.callYourPet();
 
+        Person person = context.getBean("myPerson", Person.class);
+        person.callYourPet();
         context.close();
     }
 }

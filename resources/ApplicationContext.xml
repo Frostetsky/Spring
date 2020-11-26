@@ -7,6 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:app.properties"/>
+
     <bean id = "myPet"
           class = "Spring_IoC.IoC.Cat">
     </bean>
@@ -21,7 +23,7 @@
     <bean id = "myPerson"
           class="Spring_DI.DI.Person">
         <property name="pet" ref="myPet"/>
-        <property name="name" value="Nikita"/>
-        <property name="age" value="21"/>
+        <property name="name" value="${person.name}"/>
+        <property name="age" value="${person.age}"/>
     </bean>
 </beans>

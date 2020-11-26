@@ -20,6 +20,8 @@
 
     <bean id = "myPerson"
           class="Spring_DI.DI.Person">
-        <property name = "pet" ref = "myPet"/>
+        <property name="pet" ref="myPet"/>
+        <property name="name" value="Nikita"/>
+        <property name="age" value="21"/>
     </bean>
 </beans>

@@ -1,10 +1,12 @@
 package Spring_IoC.IoC;
 
+import org.springframework.stereotype.Component;
+
+@Component("dogBean")
 public class Dog implements Pet {
     private String name;
 
     public Dog() {
-        System.out.println("Bean dog is created");
     }
 
     @Override

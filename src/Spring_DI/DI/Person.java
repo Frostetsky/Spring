@@ -2,6 +2,7 @@ package Spring_DI.DI;
 
 import Spring_IoC.IoC.Pet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("personBean")
@@ -11,7 +12,7 @@ public class Person {
     private Pet pet;
 
     @Autowired
-    public Person(Pet pet) {
+    public Person(@Qualifier("dogBean") Pet pet) {
         this.pet = pet;
     }
 

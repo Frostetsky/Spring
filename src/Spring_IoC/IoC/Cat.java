@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 public class Cat implements Pet {
 
     public Cat() {
-
     }
 
     @Override

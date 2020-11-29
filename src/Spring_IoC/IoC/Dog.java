@@ -11,6 +11,7 @@ public class Dog implements Pet {
     private String name;
 
     public Dog() {
+        System.out.println("Dog is created");
     }
 
     @PostConstruct

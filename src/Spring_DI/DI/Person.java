@@ -16,6 +16,7 @@ public class Person {
 
     @Autowired
     public Person(@Qualifier("dogBean") Pet pet) {
+        System.out.println("Person is created");
         this.pet = pet;
     }
 

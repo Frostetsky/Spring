@@ -21,3 +21,10 @@ Advice - метод, который находится в Aspect-e и содер
 должно происходить. В идеале Advice должен быть небольшим и быстро работающим.
 
 Pointcut - выражение, описывающее где должен быть применён Advice.
+
+================================================================================================================
+
+Spring AOP использует AspectJ Pointcut expression language. Т.е определенные правила в написании
+выражений для создания Pointcut.
+
+execution (public/protected/private/default/*) (return type/ *) (name method/ name method* / name method and path) (exception)

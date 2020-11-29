@@ -7,8 +7,13 @@ public class Main {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(Config.class);
 
-        Library lib = context.getBean("libBean", Library.class);
-        lib.getBook();
+        RussianLibrary saratovLib = context.getBean("saratovLibBean", RussianLibrary.class);
+        saratovLib.getBook();
+        saratovLib.returnBook();
+        saratovLib.getMagazine();
+
+        //RussianLibrary moscowLib = context.getBean("moscowLibBean", RussianLibrary.class);
+        //moscowLib.getBook();
 
         context.close();
     }

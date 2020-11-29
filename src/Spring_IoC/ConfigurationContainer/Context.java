@@ -10,6 +10,8 @@ public class Context {
         Developer developer = context.getBean("getDeveloper", Developer.class);
         HR hr = context.getBean("getHR", HR.class);
         developer.writeCode();
+        System.out.println(developer.getAge());
+        System.out.println(developer.getName());
         hr.call();
     }
 }

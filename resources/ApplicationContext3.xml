@@ -9,7 +9,8 @@
 
     <context:component-scan base-package="Spring_DI.DI"/>
     <context:component-scan base-package="Spring_IoC.IoC"/>
-    <context:property-placeholder location="classpath:app.properties"/>
+    <!--<context:property-placeholder location="classpath:app.properties"/>-->
+
 
 
 </beans>

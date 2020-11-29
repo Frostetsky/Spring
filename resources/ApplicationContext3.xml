@@ -7,7 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="Spring_IoC"/>
+    <context:component-scan base-package="Spring_DI.DI"/>
+    <context:component-scan base-package="Spring_IoC.IoC"/>
 
 
 </beans>

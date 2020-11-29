@@ -1,16 +1,16 @@
 package Spring_DI.DI;
 
 import Spring_IoC.IoC.Pet;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("personBean")
 public class Person {
     private String name;
     private int age;
     private Pet pet;
 
-    public Person() {
-
-    }
-
+    @Autowired
     public Person(Pet pet) {
         this.pet = pet;
     }

@@ -8,8 +8,10 @@ public class Main {
                 new AnnotationConfigApplicationContext(Config.class);
 
         RussianLibrary saratovLib = context.getBean("saratovLibBean", RussianLibrary.class);
-        saratovLib.getBook();
-        saratovLib.returnBook();
+        Book book = context.getBean("bookBean", Book.class);
+
+        saratovLib.getBook(book);
+        saratovLib.returnBook("Преступление и наказание");
         saratovLib.getMagazine();
 
         //RussianLibrary moscowLib = context.getBean("moscowLibBean", RussianLibrary.class);

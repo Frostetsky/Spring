@@ -6,17 +6,19 @@ import org.springframework.stereotype.Component;
 public class MoscowLibrary extends RussianLibrary {
 
     @Override
-    public void getBook() {
-        System.out.println("Магазин Москвы | Мы берём книгу.");
+    public void getBook(Book book) {
+        System.out.println("Магазин Москвы | Мы берём книгу " + book.getName());
     }
 
     @Override
-    public void returnBook() {
-
+    public void returnBook(String name) {
+        System.out.println("Возвращаем книгу.");
     }
 
     @Override
     public void getMagazine() {
 
     }
+
+
 }

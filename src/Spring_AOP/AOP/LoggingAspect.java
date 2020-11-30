@@ -14,8 +14,13 @@ public class LoggingAspect {
         System.out.println("beforeGetBookAdvice: попытка получить книгу/журнал");
     }
 
-    @Before("execution(public void returnBook())")
+    @Before("execution(public void returnBook(String))")
     public void beforeReturnBookAdvice() {
         System.out.println("beforeReturnBookAdvice: попытка вернуть книгу.");
+    }
+
+    @Before("execution(public void getBook(Spring_AOP.AOP.Book))")
+    public void beforeGetBookWithParamBookAdvice() {
+        System.out.println("beforeGetBookWithParamBookAdvice: Попытка получить книгу с нужным именем.");
     }
 }

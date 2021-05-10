@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.nesterenkonikita.spring.mvc</groupId>
+  <groupId>com.nikita.spring.mvc</groupId>
   <artifactId>Spring_MVC</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
@@ -29,22 +29,22 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>5.2.9.RELEASE</version>
+      <version>5.3.6</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>5.2.9.RELEASE</version>
+      <version>5.3.6</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>5.2.9.RELEASE</version>
+      <version>5.3.6</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>5.2.9.RELEASE</version>
+      <version>5.3.6</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>

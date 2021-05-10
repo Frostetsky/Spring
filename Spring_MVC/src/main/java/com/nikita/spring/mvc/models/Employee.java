@@ -1,5 +1,8 @@
 package com.nikita.spring.mvc.models;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class Employee {
 
     private String name;
@@ -10,7 +13,12 @@ public class Employee {
 
     private String department;
 
+    Map<String, String> departments;
+
     public Employee() {
+        departments = new LinkedHashMap<>();
+        departments.put("Information Technology", "IT");
+        departments.put("Human Resources", "HR");
     }
 
     public String getName() {
@@ -43,6 +51,14 @@ public class Employee {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public Map<String, String> getDepartments() {
+        return departments;
+    }
+
+    public void setDepartments(Map<String, String> departments) {
+        this.departments = departments;
     }
 
     @Override

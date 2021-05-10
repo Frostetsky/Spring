@@ -15,10 +15,17 @@ public class Employee {
 
     Map<String, String> departments;
 
+    private String carBrand;
+
+    Map<String, String> carBrands;
+
     public Employee() {
         departments = new LinkedHashMap<>();
+        carBrands = new LinkedHashMap<>();
         departments.put("Information Technology", "IT");
         departments.put("Human Resources", "HR");
+        carBrands.put("BMW", "BMW");
+        carBrands.put("Audi", "Audi");
     }
 
     public String getName() {
@@ -59,6 +66,22 @@ public class Employee {
 
     public void setDepartments(Map<String, String> departments) {
         this.departments = departments;
+    }
+
+    public String getCarBrand() {
+        return carBrand;
+    }
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+
+    public Map<String, String> getCarBrands() {
+        return carBrands;
+    }
+
+    public void setCarBrands(Map<String, String> carBrands) {
+        this.carBrands = carBrands;
     }
 
     @Override

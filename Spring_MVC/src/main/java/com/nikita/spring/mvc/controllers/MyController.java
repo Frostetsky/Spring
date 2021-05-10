@@ -1,7 +1,9 @@
-package com.nikita.spring.mvc;
+package com.nikita.spring.mvc.controllers;
 
+import com.nikita.spring.mvc.models.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,14 +19,14 @@ public class MyController {
     }
 
     @RequestMapping("/askDetails")
-    public String askEmployeeDetails() {
+    public String askEmployeeDetails(Model model) {
+        model.addAttribute("employee", new Employee());
         return "ask-emp-details-view";
     }
 
     @RequestMapping("/showDetails")
-    public String showEmpDetails(@RequestParam("employeeName") String name, Model model) {
-        name = "Mr. " + name;
-        model.addAttribute("nameAtt", name);
+    public String showEmpDetails(@ModelAttribute("employee") Employee employee) {
+
         return "show-emp-details-view";
     }
 }

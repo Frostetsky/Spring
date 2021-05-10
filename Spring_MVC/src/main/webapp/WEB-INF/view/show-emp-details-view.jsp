@@ -9,7 +9,7 @@
 <br>
 <br>
 
-Your name: ${param.employeeName}
+Your name: ${nameAtt}
 
 </body>
 </html>

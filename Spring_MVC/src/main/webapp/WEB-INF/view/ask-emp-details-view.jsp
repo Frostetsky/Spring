@@ -22,6 +22,9 @@
     Number: <form:input path="number"/>
     <form:errors path="number"/>
     <br>
+    E-mail: <form:input path="email"/>
+    <form:errors path="email"/>
+    <br>
     Department: <form:select path="department">
                 <form:options items="${employee.departments}"/>
                 </form:select>

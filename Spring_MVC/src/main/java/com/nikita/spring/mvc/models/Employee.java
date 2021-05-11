@@ -1,5 +1,7 @@
 package com.nikita.spring.mvc.models;
 
+import com.nikita.spring.mvc.validation.CheckerEmail;
+
 import javax.validation.constraints.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -29,6 +31,9 @@ public class Employee {
 
     @Pattern(regexp = "\\d-\\d{3}-\\d{3}-\\d{2}-\\d{2}", message = "please use pattern X-XXX-XXX-XX-XX")
     private String number;
+
+    @CheckerEmail(value = "bk.ru", message = "our e-mail must be ended on bk.ru")
+    private String email;
 
     public Employee() {
         departments = new LinkedHashMap<>();
@@ -120,6 +125,14 @@ public class Employee {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override

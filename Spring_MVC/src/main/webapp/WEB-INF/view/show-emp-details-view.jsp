@@ -18,6 +18,8 @@ Your salary: ${employee.salary}
 <br>
 Your number: ${employee.number}
 <br>
+Your e-mail: ${employee.email}
+<br>
 Your department: ${employee.department}
 <br>
 Your car: ${employee.carBrand}

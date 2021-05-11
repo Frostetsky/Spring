@@ -1,12 +1,17 @@
 package com.nikita.spring.mvc.models;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Employee {
-
+    @Size(min = 2, message = "Incorrect name")
     private String name;
 
+    @NotBlank(message = "Surname is important field")
     private String surname;
 
     private Integer salary;

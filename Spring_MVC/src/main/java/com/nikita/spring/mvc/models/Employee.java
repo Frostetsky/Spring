@@ -1,9 +1,6 @@
 package com.nikita.spring.mvc.models;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -14,6 +11,8 @@ public class Employee {
     @NotBlank(message = "Surname is important field")
     private String surname;
 
+    @Min(value = 10000, message = "salary must be greater than 9999")
+    @Max(value = 100000, message = "salary must be less than 100001")
     private Integer salary;
 
     private String department;
@@ -27,6 +26,9 @@ public class Employee {
     private String[] languages;
 
     private Map<String, String> languagesList;
+
+    @Pattern(regexp = "\\d-\\d{3}-\\d{3}-\\d{2}-\\d{2}", message = "please use pattern X-XXX-XXX-XX-XX")
+    private String number;
 
     public Employee() {
         departments = new LinkedHashMap<>();
@@ -110,6 +112,14 @@ public class Employee {
 
     public void setLanguagesList(Map<String, String> languagesList) {
         this.languagesList = languagesList;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     @Override

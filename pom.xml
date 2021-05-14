@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Spring_MVC</module>
+        <module>Spring_REST_API</module>
     </modules>
 
     <name>Spring</name>

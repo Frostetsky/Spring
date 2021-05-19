@@ -23,4 +23,12 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         List<Employee> result = query.getResultList();
         return result;
     }
+
+    @Override
+    @Transactional
+    public Employee findByID(Integer id) {
+        Session session = sessionFactory.getCurrentSession();
+        Employee employee = session.get(Employee.class, id);
+        return employee;
+    }
 }

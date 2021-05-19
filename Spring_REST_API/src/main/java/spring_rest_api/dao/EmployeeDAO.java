@@ -8,4 +8,6 @@ public interface EmployeeDAO {
     public List<Employee> getAllEmployees();
 
     public Employee findByID(Integer id);
+
+    public void add(Employee employee);
 }

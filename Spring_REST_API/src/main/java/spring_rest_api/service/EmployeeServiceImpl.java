@@ -25,4 +25,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee findByID(Integer id) {
         return employeeDAO.findByID(id);
     }
+
+    @Override
+    public void add(Employee employee) {
+        employeeDAO.add(employee);
+    }
 }

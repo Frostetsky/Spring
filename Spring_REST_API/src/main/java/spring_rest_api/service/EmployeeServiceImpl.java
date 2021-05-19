@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import spring_rest_api.dao.EmployeeDAO;
 import spring_rest_api.entity.Employee;
+import spring_rest_api.exception_handling.NoSuchEmployeeException;
 
 import java.util.List;
 

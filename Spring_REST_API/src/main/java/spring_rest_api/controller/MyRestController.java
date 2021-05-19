@@ -39,4 +39,10 @@ public class MyRestController {
         employeeService.add(employee);
         return employee;
     }
+
+    @PutMapping("/employees")
+    public Employee update(@RequestBody Employee employee) {
+        employeeService.add(employee);
+        return employee;
+    }
 }

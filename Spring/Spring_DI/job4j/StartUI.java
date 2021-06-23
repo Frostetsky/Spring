@@ -1,5 +1,8 @@
 package Spring_DI.job4j;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class StartUI {
 
     private Store store;

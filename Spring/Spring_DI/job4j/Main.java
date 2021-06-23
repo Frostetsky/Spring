@@ -11,5 +11,23 @@ public class Main {
         ui.add("Petr Arsentev");
         ui.add("Ivan ivanov");
         ui.print();
+        System.out.println();
+        StartUI other = context.getBean(StartUI.class);
+        other.add("Nikita Nesterenko");
+        other.print();
     }
 }
+
+/*
+1. singleton - объект создает один раз на всю виртуальную машину.
+
+2. prototype - каждый раз создается новый объект.
+
+3. session - объект существует, пока существует сессия пользователя.
+
+4. request - объект существует, пока существует запрос.
+
+5. application - объект существует, пока существует ServletContext.
+
+6. websocket - объект существует, пока есть активная сессия для web-сокета.
+ */

@@ -12,6 +12,7 @@
         <module>Spring_MVC</module>
         <module>Spring_REST_API</module>
         <module>Spring_Security</module>
+        <module>Spring_MVC_Annot</module>
     </modules>
 
     <name>Spring</name>

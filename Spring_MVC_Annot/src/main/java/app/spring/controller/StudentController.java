@@ -5,19 +5,9 @@ import app.spring.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-// Server1 (core) - пишет логи
-// Server2 (mvc) - хранит логи
-// браузер пользователя
-
-// Server1 (записывает в файл)
-// Server1 -> Server2 (Server2 сохранил данные в БД)
-// Browser -> Server2 (предоставляет данные через контроллер)
 
 
 @Controller
@@ -31,11 +21,18 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-
     @RequestMapping("/createStudent")
     public String createStudent(Model model) {
         model.addAttribute("student", new Student());
         return "student-info";
+    }
+
+    @PostMapping("/saveStudent")
+    public String saveStudent(@ModelAttribute("student") Student student) {
+
+        studentService.saveOrUpdate(student);
+
+        return "redirect:/students/findStudents";
     }
 
 
@@ -47,12 +44,19 @@ public class StudentController {
     }
 
     @RequestMapping("/updateStudent")
-    public String updateStudent() {
-        return null;
+    public String updateStudent(@RequestParam("studentId") Integer id, Model model) {
+
+        Student student = studentService.getStudent(id);
+        model.addAttribute("student", student);
+
+        return "student-info";
     }
 
     @RequestMapping("/deleteStudent")
-    public String deleteStudent() {
+    public String deleteStudent(@RequestParam("studentId") Integer id) {
+
+        studentService.deleteStudent(id);
+
         return "redirect:/students/findStudents";
     }
 

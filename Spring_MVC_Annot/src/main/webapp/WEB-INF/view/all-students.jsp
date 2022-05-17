@@ -2,15 +2,12 @@
 <html>
 <body>
 
-// @RequestParam - возвращает параметр из URL
-// @RequestParam(id) int - в данном случае вернёт 1
-// Пример: http://localhost:9000/students/student?id=1
-
 <table align="center">
     <tr>
         <th>Name</th>
         <th>Surname</th>
-        <th>salary</th>
+        <th>Salary</th>
+        <th>Operations</th>
     </tr>
 
     <c:forEach var="student" items="${students}">
@@ -38,6 +35,10 @@
 
 </table>
 
+<br>
+<p align="center">
+    <input type="button" style="color:green" value="Add Student" onclick="window.location.href = 'createStudent'">
+</p>
 
 </body>
 </html>

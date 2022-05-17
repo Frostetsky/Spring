@@ -20,4 +20,16 @@ public class StudentService {
     public List<Student> findAll() {
         return studentRepository.findAll();
     }
+
+    public void saveOrUpdate(Student student) {
+        studentRepository.saveStudent(student);
+    }
+
+    public void deleteStudent(Integer id) {
+        studentRepository.delete(id);
+    }
+
+    public Student getStudent(Integer id) {
+        return studentRepository.getStudent(id);
+    }
 }

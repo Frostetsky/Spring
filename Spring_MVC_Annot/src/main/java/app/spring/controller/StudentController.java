@@ -25,21 +25,20 @@ public class StudentController {
     }
 
     @GetMapping("/findStudents")
-    public String findAll(@RequestParam("page") Integer page, Model model) {
-        PageRequest pageRequest = PageRequest.of(page, 2);
-        List<Student> students = studentService
-                .findAll(pageRequest)
-                .get()
-                .collect(Collectors.toList());
-        model.addAttribute("students", students);
+    public String findAll(@RequestParam(value = "page", required = false) Integer page, Model model) {
+
+        model.addAttribute("students", studentService.findAll());
         return "all-students";
     }
 
     @GetMapping("/findById")
-    public String findById(@RequestParam("id") Integer id, Model model) {
-        Student student = studentService.findById(id).get();
+    public String findById(@RequestParam(value = "id") Integer id,
+                           @RequestParam(value = "surname") String surname,
+                           Model model) {
+        model.addAttribute("name", studentService.findName(id, surname));
+      //  Student student = studentService.findById(id).get();
 
-        model.addAttribute("student", student);
+      //  model.addAttribute("student", student);
 
         return "student-one";
     }

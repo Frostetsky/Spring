@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -18,10 +19,10 @@ import javax.persistence.EntityManagerFactory;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "app.spring.repository")
+//@EnableJpaRepositories(basePackages = "app.spring.repository")
 public class DataBaseConfiguration {
 
-    @Bean
+    /*@Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(BasicDataSource basicDataSource) {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setGenerateDdl(false);
@@ -38,7 +39,7 @@ public class DataBaseConfiguration {
         JpaTransactionManager txManager = new JpaTransactionManager();
         txManager.setEntityManagerFactory(entityManagerFactory);
         return txManager;
-    }
+    }*/
 
     @Bean
     public BasicDataSource basicDataSource() {
@@ -48,5 +49,12 @@ public class DataBaseConfiguration {
         basicDataSource.setPassword("password");
         basicDataSource.setUsername("postgres");
         return basicDataSource;
+    }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate(BasicDataSource basicDataSource) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate.setDataSource(basicDataSource);
+        return jdbcTemplate;
     }
 }

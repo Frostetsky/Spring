@@ -15,6 +15,7 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
     public List<Student> findByName(@Param("name") String name);
    */
 
+
    /* public List<Student> findByName(String name);*/
 
 }

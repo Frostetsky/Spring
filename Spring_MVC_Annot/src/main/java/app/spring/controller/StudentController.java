@@ -39,6 +39,7 @@ public class StudentController {
     public String findById(@RequestParam("id") Integer id, Model model) {
         Student student = studentService.findById(id).get();
 
+
         model.addAttribute("student", student);
 
         return "student-one";

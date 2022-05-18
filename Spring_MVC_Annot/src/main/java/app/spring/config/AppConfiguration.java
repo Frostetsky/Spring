@@ -22,4 +22,5 @@ public class AppConfiguration extends WebMvcConfigurerAdapter {
         return resolver;
     }
 
+
 }

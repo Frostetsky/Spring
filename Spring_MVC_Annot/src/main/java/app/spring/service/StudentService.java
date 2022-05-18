@@ -25,6 +25,7 @@ public class StudentService {
         return studentRepository.findById(id);
     }
 
+
     public Page<Student> findAll(Pageable pageable) {
         return studentRepository.findAll(pageable);
     }

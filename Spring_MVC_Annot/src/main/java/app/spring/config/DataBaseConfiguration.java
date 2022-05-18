@@ -40,6 +40,7 @@ public class DataBaseConfiguration {
         return txManager;
     }
 
+
     @Bean
     public BasicDataSource basicDataSource() {
         BasicDataSource basicDataSource = new BasicDataSource();

@@ -22,6 +22,7 @@ public class Student {
     @Column(name = "surname")
     private String surname;
 
+
     @Column(name = "salary")
     private int salary;
 

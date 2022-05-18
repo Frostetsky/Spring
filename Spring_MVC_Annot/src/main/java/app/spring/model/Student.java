@@ -1,13 +1,11 @@
 package app.spring.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
+@Builder
 @Table(name = "students")
 public class Student {
 

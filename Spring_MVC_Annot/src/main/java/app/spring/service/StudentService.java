@@ -3,9 +3,13 @@ package app.spring.service;
 import app.spring.model.Student;
 import app.spring.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -17,19 +21,11 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    public List<Student> findAll() {
-        return studentRepository.findAll();
+    public Optional<Student> findById(Integer id) {
+        return studentRepository.findById(id);
     }
 
-    public void saveOrUpdate(Student student) {
-        studentRepository.saveStudent(student);
-    }
-
-    public void deleteStudent(Integer id) {
-        studentRepository.delete(id);
-    }
-
-    public Student getStudent(Integer id) {
-        return studentRepository.getStudent(id);
+    public Page<Student> findAll(Pageable pageable) {
+        return studentRepository.findAll(pageable);
     }
 }
